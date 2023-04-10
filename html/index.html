@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Games</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="/html/style.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <div>
+            <div id="demo"></div>
+        </div>
+
+        <script>
+            var txt = "";
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onload = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                    let games = JSON.parse(this.responseText);
+                    console.log(games);
+                    let txt = "";
+
+                    for(i = 0; i < games.length;i++){
+                        txt +=`
+                            <div class="col-md-4 col-sm-6 ">
+                                <div class="card">
+                                <img class="picture" src="/img/${games[i].image}">
+                                    <div class="box-content">
+                                        <h3 class="text">${games[i].name}</h3>
+                                        <h3 class="text">${games[i].playermode}</h3>
+                                        <br>
+                                        <h3 class="text">Publisher: ${games[i].publisher}</h3>
+                                        <h3 class="text">Developer: ${games[i].developer}</h3>
+                                        <h3 class="text">Genre:</h3>
+                                        <h3 class="text">
+                                            <ul>`;
+                                            for (j = 0; j <games[i].genre.length; j++){
+                                                txt += `<li>${games[i].genre[j]}</li>`;
+                                            }
+                                        txt +=`    
+                                        </ul>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                    document.getElementById("demo").innerHTML = txt;
+                }
+            }
+            xmlhttp.open("GET", "http://json-activity.test/php/games.php");
+            xmlhttp.send();
+        </script>
+    </body>
+</html>

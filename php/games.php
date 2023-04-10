@@ -12,7 +12,7 @@
         ],
 
         [
-            "image" => "howarts.jpg",
+            "image" => "hogwarts.png",
             "name" => "Hogwarts Legacy",
             "playermode" => "Single Player",
             "developer" => "Avalanche Software",
@@ -21,7 +21,7 @@
         ],
         
         [
-            "image" => "valorant.jpg",
+            "image" => "valorant.png",
             "name" => "Valorant",
             "playermode" => "Multiplayer",
             "developer" => "Riot Games",
@@ -30,7 +30,7 @@
         ],
 
         [
-            "image" => "league.jpg",
+            "image" => "league.png",
             "name" => "League of Legends",
             "playermode" => "Multiplayer",
             "developer" => "Riot Games",
@@ -39,12 +39,21 @@
         ],
 
         [
-            "image" => "callofduty.jpg",
+            "image" => "callofduty.png",
             "name" => "Call of Duty Warzone",
             "playermode" => "Multiplayer",
             "developer" => "Raven Software",
             "publisher" => "Activision",
             "genre" => ["Tactical-Shooter", "First Person Shooter", "Action", "Team-Based Game", "Battle Royale"]
+        ],
+
+        [
+            "image" => "thelastofus.png",
+            "name" => "The Last of Us",
+            "playermode" => "Single Player",
+            "developer" => "Naughty Dog",
+            "publisher" => "Sony Computer Entertainment",
+            "genre" => ["Action", "Adventure", "Survival ", "Horror ", "Zombie"]
         ],
 
     ];
